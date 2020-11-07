@@ -1,0 +1,162 @@
+body {
+    background-image: url("bg.png");
+    font-family: sans-serif;
+}
+
+
+.navbar1 {
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 10px;
+    padding: 10px;
+    right: 10px;
+    border-radius: 10px;
+}
+
+.navbar1 .aktiv{
+    background-color: grey;
+    color: red;
+}
+
+.navbar1 a:hover {
+    background: black;
+    color: rgb(155, 36, 36);
+}
+
+
+
+
+.navbar2 {
+    top: 100%;
+    margin-top:14px;
+    text-align: center;
+    opacity: 0.5;
+    }
+
+.navbar2:hover {
+    opacity: 100%;
+}
+
+
+
+.kreis {
+   background: rgb(182, 39, 39);
+   border-radius: 50%;
+   height: 1000px;
+   width: 1000px;
+    margin-top: -700px;
+    display: block;
+    margin-left: 635px;
+}
+
+.kreistext .untertext{
+    color: white;
+    font-size: 150%;
+    text-align: left;
+    width: 300px;
+    margin-left: 480px;
+    margin-right: auto;
+}
+
+
+.content {
+    padding: 16px;
+}
+
+.text {
+    line-height: 200%;
+    text-align: center;
+}
+
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    float: right;
+}
+
+
+
+    
+
+    
+
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+a:visited {
+    color: white;
+}
+
+
+
+
+
+
+header {
+    width: 800px;
+}
+
+
+h1 {
+    color: rgb(255, 255, 255);
+    margin-top: 70px;
+    text-align: center;
+    padding-top: 700px;
+    font-size: 90px
+}
+
+h2 {
+    color: rgb(0, 0, 0);
+    text-align: left;
+    margin-left: 650px;
+}
+
+
+
+.pictures {
+    margin-left: 80px;
+    text-align: center;
+}
+
+.size {
+    width: 800px;
+    height: auto;
+}
+
+
+
+.formular {
+   width:900px;
+   height:100px;
+   
+}
+ .formular .text {
+     color: grey;
+     text-align: left;
+ }
+
+input[type=text], textarea {
+    width: 500px;
+    padding: 7px 20px;
+     margin: 5px 0;
+     box-sizing: border-box;
+     color: white;
+    background-color:rgba(129, 123, 123, 0.596);
+    }
+
+input[type=submit] {
+    background-color: rgba(129, 123, 123, 0.596);
+    color: white;
+    padding: 8px 10px;
+}
