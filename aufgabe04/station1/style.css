@@ -1,0 +1,42 @@
+body {
+    background-image: url("./media/bg.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1100px;
+}
+
+.wrapper {
+   position: relative;
+   display: block;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 320px;
+    text-align: center;
+}
+
+.plant {
+    position: absolute;
+    top: -50px;
+    right: 450px;
+}
+
+.pinguin {
+    position: relative;
+    top: -130px;
+    right: -500px;
+}
+
+.bilder {
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    top: 15px;
+    margin-left: 75px;
+    color: white;
+    font-size: 110%;
+    width: 60%;
+}

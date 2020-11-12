@@ -1,0 +1,59 @@
+body {
+    background-image: url("./media/bg.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1100px;
+}
+
+.wrapper {
+   position: relative;
+   display: block;
+}
+
+.plant {
+    position: absolute;
+    top: -50px;
+    right: 450px;
+}
+
+.gifts {
+    position: relative;
+    top: -130px;
+    right: -400px;
+}
+
+.bilder {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 15px;
+    margin-left: 75px;
+    color: white;
+    font-size: 120%;
+    width: 40%;
+}
+
+.baum {
+    position: absolute;
+    top: 25px;
+    left: 325px;
+    width: 250px;
+    height: auto;
+}
+
+.stern1 {
+    position: absolute;
+    bottom: 400px;
+}
+
+.stern2 {
+    position: absolute;
+    bottom: 300px;
+    left: 350px;
+}
+
+.stern3 {
+    position: absolute;
+    bottom: 450px;
+    left: 500px;
+}

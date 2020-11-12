@@ -1,0 +1,70 @@
+body {
+    background-image: url("./media/bg.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1100px;
+}
+
+.wrapper {
+   position: relative;
+   display: block;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 320px;
+    text-align: center;
+}
+
+
+
+.headline {
+   position: absolute;
+    margin-top: -385px;
+    margin-left: 50px;
+    color: white;
+}
+
+.stern1 {
+    margin-top: -500px;
+    margin-bottom: 250px;
+    margin-left: 100px;
+}
+
+.stern1:hover {
+    background-image: url(media/stern_hover.png);    
+}
+
+.stern2 {
+    margin-top: -400px;
+    margin-bottom: 50px;
+}
+
+.stern2:hover {
+    background-image: url(media/stern_hover.png);
+}
+
+.stern3 {
+    margin-top: -400px;
+    margin-bottom: 200px;
+    margin-left: 100px;
+}
+
+.stern3:hover {
+    background-image: url(media/stern_hover.png);
+}
+
+.stern4 {
+    margin-top: -400px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+
+}
+
+.stern4:hover {
+    background-image: url(media/stern_hover.png);
+}

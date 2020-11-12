@@ -1,0 +1,31 @@
+body {
+    background-image: url("./media/bg.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1100px;
+}
+
+.wrapper {
+   position: relative;
+   display: block;
+}
+
+.videolink {
+   margin-top: -350px;
+   margin-left: 45px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 320px;
+    text-align: center;
+}
+
+.banderole {
+    position: absolute;
+    margin-top: -90px;
+    margin-left: 370px;
+}

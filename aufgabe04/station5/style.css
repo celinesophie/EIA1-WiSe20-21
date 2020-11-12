@@ -1,0 +1,36 @@
+body {
+    background-image: url("./media/bg.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1100px;
+}
+
+.wrapper {
+   position: relative;
+   display: block;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 320px;
+    text-align: center;
+}
+
+
+.formular {
+    color: white;
+    margin-top: -285px;
+    margin-left: 50px;
+}
+
+.headline {
+   position: absolute;
+    margin-top: -385px;
+    margin-left: 50px;
+    color: white;
+    width: 70%;
+}
