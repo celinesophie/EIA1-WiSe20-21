@@ -48,19 +48,40 @@ document.querySelector(".neun").addEventListener('click', function() {
 })
 
 
-//7.2
+//7.2 (erste Version)
 
-function playBeat (){
-    setInterval(function() {
-        playSample(0);
-        playSample(1);
-        playSample(2);
-        console.log('hello');
-        console.log('bye');
+// function playBeat (){
+//     setInterval(function() {
+//         playSample(0);
+//         playSample(1);
+//         playSample(2);
+//         console.log('hello');
+//         console.log('bye');
+//     }, 500);
+// }
+
+
+// document.querySelector('.play').addEventListener('click', function () {
+//     playBeat();
+// });
+
+
+//7.2 richtige Version
+//Funktion
+var sequence:string  [] = ['assets/hihat.mp3', 'assets/kick.mp3', 'assets/snare.mp3'];
+
+var indexOfSequence: number = 0;
+
+function playBeat() {
+    setInterval(function () {
+        var sound: HTMLAudioElement = new Audio (sequence[indexOfSequence]);
+        sound.play();
+
+        indexOfSequence = indexOfSequence + 1;
     }, 500);
 }
 
-
+//Aufruf
 document.querySelector('.play').addEventListener('click', function () {
-    playBeat();
+    playBeat ()
 });
