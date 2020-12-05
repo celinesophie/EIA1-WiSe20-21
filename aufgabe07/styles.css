@@ -1,0 +1,112 @@
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #000000;
+}
+
+.mitte {
+    background-color: blanchedalmond;
+    align-items: center;
+}
+
+
+.mitte .eins {
+    height: 150px;
+    width: 150px;
+    background-color: #2e51b1;
+    position: absolute;
+    border-radius: 10px;
+    left: 620px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.zwei {
+    height: 150px;
+    width: 150px;
+    background-color: #2e51b1;;
+    position: absolute;
+    border-radius: 10px;
+    margin-left: 50%;
+    }
+
+.drei {
+    height: 150px;
+    width: 150px;
+    background-color: #2e51b1;;
+    position: absolute;
+    border-radius: 10px;
+    left: 932px;
+}
+
+.vier {
+    height: 150px;
+    width: 150px;
+    background-color: #d12f80;
+    position: absolute;
+    border-radius: 10px;
+    left: 620px;
+    top: 165px;
+}
+
+.fünf {
+    height: 150px;
+    width: 150px;
+    background-color:#d12f80;;
+    position: absolute;
+    border-radius: 10px; 
+    top: 165px;
+    margin-left: 50%;
+}
+
+.sechs {
+    height: 150px;
+    width: 150px;
+    background-color: #d12f80;;
+    position: absolute;
+    border-radius: 10px;
+    left: 932px;
+    top: 165px;
+}
+
+.sieben {
+    height: 150px;
+    width: 150px;
+    background-color: #d12f80;;
+    position: absolute;
+    border-radius: 10px;
+    left: 620px;
+    top: 322px;
+}
+
+.acht {
+    height: 150px;
+    width: 150px;
+    background-color: #d18b2f;;
+    position: absolute;
+    border-radius: 10px; 
+    top: 322px;
+    margin-left: 50%;
+}
+
+.neun {
+    height: 150px;
+    width: 150px;
+    background-color: #d18b2f;
+    position: absolute;
+    border-radius: 10px;
+    left: 932px;
+    top: 322px;
+}
+
+.play {
+    position: absolute; 
+    margin-left: 50%;
+    top: 470px;
+
+}
