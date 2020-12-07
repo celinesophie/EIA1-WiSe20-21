@@ -5,43 +5,55 @@ html {
 
 body {
     background-color: #000000;
-}
-
-.mitte {
-    background-color: blanchedalmond;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
+/* .mitte {
+    background-color: blanchedalmond;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    width: 50%;
+} */
 
-.mitte .eins {
+.mitte {
+    width: 500px;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.eins {
     height: 150px;
     width: 150px;
     background-color: #2e51b1;
     position: absolute;
     border-radius: 10px;
-    left: 620px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    left: 530px;
 }
 
 .zwei {
     height: 150px;
     width: 150px;
-    background-color: #2e51b1;;
+    background-color: #2e51b1;
     position: absolute;
     border-radius: 10px;
-    margin-left: 50%;
+    left: 690px;
     }
 
 .drei {
     height: 150px;
     width: 150px;
-    background-color: #2e51b1;;
+    background-color: #2e51b1;
     position: absolute;
     border-radius: 10px;
-    left: 932px;
+    left: 850px;
 }
 
 .vier {
@@ -50,7 +62,7 @@ body {
     background-color: #d12f80;
     position: absolute;
     border-radius: 10px;
-    left: 620px;
+    left: 530px;
     top: 165px;
 }
 
@@ -61,7 +73,7 @@ body {
     position: absolute;
     border-radius: 10px; 
     top: 165px;
-    margin-left: 50%;
+    left: 690px;
 }
 
 .sechs {
@@ -70,7 +82,7 @@ body {
     background-color: #d12f80;;
     position: absolute;
     border-radius: 10px;
-    left: 932px;
+    left: 850px;
     top: 165px;
 }
 
@@ -80,7 +92,7 @@ body {
     background-color: #d12f80;;
     position: absolute;
     border-radius: 10px;
-    left: 620px;
+    left: 530px;
     top: 322px;
 }
 
@@ -91,7 +103,7 @@ body {
     position: absolute;
     border-radius: 10px; 
     top: 322px;
-    margin-left: 50%;
+    left: 690px;
 }
 
 .neun {
@@ -100,13 +112,13 @@ body {
     background-color: #d18b2f;
     position: absolute;
     border-radius: 10px;
-    left: 932px;
+    left: 850px;
     top: 322px;
 }
 
 .play {
     position: absolute; 
-    margin-left: 50%;
+    left: 690px;
     top: 470px;
 
 }
