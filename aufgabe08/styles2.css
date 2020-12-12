@@ -1,0 +1,149 @@
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url("images/wallpaper.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .mitte {
+    background-color: blanchedalmond;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    width: 50%;
+} */
+
+.mitte {
+    width: 500px;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.eins {
+    height: 150px;
+    width: 150px;
+    background-color: #152244;
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 530px;
+}
+
+.zwei {
+    height: 150px;
+    width: 150px;
+    background-color: #152244;
+    position: absolute;
+    border-radius: 10px;
+    left: 690px;
+    }
+
+.drei {
+    height: 150px;
+    width: 150px;
+    background-color: #152244;
+    position: absolute;
+    border-radius: 10px;
+    left: 850px;
+}
+
+.vier {
+    height: 150px;
+    width: 150px;
+    background-color: #74284e;
+    position: absolute;
+    border-radius: 10px;
+    left: 530px;
+    top: 165px;
+}
+
+.fünf {
+    height: 150px;
+    width: 150px;
+    background-color:#74284e;;
+    position: absolute;
+    border-radius: 10px; 
+    top: 165px;
+    left: 690px;
+}
+
+.sechs {
+    height: 150px;
+    width: 150px;
+    background-color: #74284e;;
+    position: absolute;
+    border-radius: 10px;
+    left: 850px;
+    top: 165px;
+}
+
+.sieben {
+    height: 150px;
+    width: 150px;
+    background-color: #74284e;;
+    position: absolute;
+    border-radius: 10px;
+    left: 530px;
+    top: 322px;
+}
+
+.acht {
+    height: 150px;
+    width: 150px;
+    background-color: #ad6f3c;;
+    position: absolute;
+    border-radius: 10px; 
+    top: 322px;
+    left: 690px;
+}
+
+.neun {
+    height: 150px;
+    width: 150px;
+    background-color: #ad6f3c;
+    position: absolute;
+    border-radius: 10px;
+    left: 850px;
+    top: 322px;
+}
+
+.eins:hover, .zwei:hover, .drei:hover, .vier:hover, .fünf:hover,
+.sechs:hover, .sieben:hover, .acht:hover, .neun:hover{
+    opacity: 80%;
+}
+
+/* Aufgabe 8 */
+.icons {
+    position: absolute; 
+    left: 750px;
+    top: 550px;
+    font-size: 80px;
+    transform: translate(-50%, -50%);
+    color: #c59ca5;
+}
+
+
+.isHidden {
+    display: none !important;
+}
+
+.active {
+    color: #8f0c29 !important;
+}
+
+#trash:hover {
+    color: #666;
+}
+
+#trash:active {
+    transform: translateY(4px);
+}
