@@ -26,14 +26,16 @@ li {
     display: none;
 } */
 
-#trash:hover {
+.trash:hover {
     color: grey;
 }
 
-#trash {
+.trash {
     position: absolute;
     left: 280px;
     margin-top: 5px;
+    color: black;
+    font-size: 20px;
 }
 
 #todoInput{
