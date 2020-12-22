@@ -6,10 +6,14 @@ var versuchx;
     inputField.addEventListener("keypress", function (e) {
         if (e.key == "Enter") {
             addtodo();
+            clearInput();
             console.log("enter gedrückt");
-            ;
         }
     });
+    //inputfeld leeren
+    function clearInput() {
+        inputField.value = "";
+    }
     //funktion erstell neues listenelement mit checkbox, inputvalue, trash
     function addtodo() {
         var myCheckbox = document.createElement("input");

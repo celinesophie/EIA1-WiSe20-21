@@ -8,10 +8,15 @@ namespace versuchx {
     inputField.addEventListener("keypress", function (e: KeyboardEvent): void {
         if (e.key == "Enter") {
             addtodo();
+            clearInput();
             console.log("enter gedrückt");
-            ;
         }
     });
+
+    //inputfeld leeren
+    function clearInput(): void {
+        inputField.value = "";
+    }
 
 
     //funktion erstell neues listenelement mit checkbox, inputvalue, trash
