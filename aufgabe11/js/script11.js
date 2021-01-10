@@ -9,7 +9,7 @@ var aufgabe11;
             checked: true
         }, {
             text: "Kochen",
-            checked: true
+            checked: false
         }];
     var inputDOMElement;
     var addButtonDOMElement;
@@ -18,18 +18,50 @@ var aufgabe11;
     var opentasks;
     var closedtasks;
     window.addEventListener("load", function () {
-        // import Artyom from "js/libs/artyom.window.min.js"
-        // let jarvis = new Artyom();
-        // jarvis.say("Hello !");
-        // Artyom.initialize({
-        //     lang: "en-US",
-        //     continuous: true,
-        //     debug: false, // Show what recognizes in the Console
-        //     listen: true, // Start listening after this
-        //     speed: 0.9, // Talk a little bit slow
-        //     //mode:"normal", // This parameter is not required as it will be normal by default
-        //     word_init_comma: "jarvis"
-        //   });
+        var artyom = new Artyom();
+        //Artyom wird gestartet (wenn man Start drückt), hat timeout bis es hinzufügt, gestartet durch index wort
+        function startContinuousArtyom() {
+            artyom.fatality();
+            setTimeout(function () {
+                artyom.initialize({
+                    lang: "de-DE",
+                    continuous: true,
+                    listen: true,
+                    interimResults: true,
+                    debug: true
+                }).then(function () {
+                    console.log("Ready!");
+                });
+            }, 250);
+        }
+        startContinuousArtyom();
+        //wenn indexwort gesagt wird hört es zu -> wildcard ist das gesagte und wird Objekt hinzugefügt
+        artyom.addCommands({
+            indexes: ["erstelle Aufgabe *"],
+            smart: true,
+            action: function (i, wildcard) {
+                todosObjekt.unshift({
+                    text: wildcard,
+                    checked: false
+                });
+                drawListToDOM();
+                console.log("NEUE Aufgabe wird erstellt: " + wildcard);
+                artyom.say(wildcard + "hinzugefügt");
+            }
+        });
+        //Start des Zuhörens durch klick ausgelöst
+        document.getElementById("start").addEventListener("click", function () {
+            artyom.say("Willkommen");
+            startContinuousArtyom();
+        });
+        //Stopbutton unnötig
+        // document.getElementById("stop").addEventListener("click", function(): void {
+        //     artyom.fatality(); //damit artyom aufhört
+        //     // artyom.initialize(),
+        //     artyom.say("danke");
+        //     // UserDictation.stop();
+        //     // todosObjekt.unshift(wildcard);
+        // });
         inputDOMElement = document.querySelector("#inputTodo");
         addButtonDOMElement = document.querySelector("#addButton");
         todosDOMElement = document.querySelector("#todos");
@@ -39,6 +71,7 @@ var aufgabe11;
         addButtonDOMElement.addEventListener("click", addTodo);
         drawListToDOM();
     });
+    //Elemente werden DOM hinzugefügt
     function drawListToDOM() {
         todosDOMElement.innerHTML = "";
         var _loop_1 = function (index) {
@@ -61,14 +94,15 @@ var aufgabe11;
         }
         updateCounter();
     }
+    //Zähler wird aktualisiert
     function updateCounter() {
         var nropen = todosObjekt.filter(function (todosObjekt) { return todosObjekt.checked === false; }).length;
         var nrdone = todosObjekt.filter(function (todosObjekt) { return todosObjekt.checked === true; }).length;
         counterDOMElement.innerHTML = todosObjekt.length + " in total";
         opentasks.innerHTML = nropen + " open";
-        console.log(nrdone);
         closedtasks.innerHTML = nrdone + " done";
     }
+    //Todo wird erstellt
     function addTodo() {
         if (inputDOMElement.value != "") {
             todosObjekt.unshift({
@@ -79,10 +113,12 @@ var aufgabe11;
         }
         drawListToDOM();
     }
+    //Checkbox
     function toggleCheckState(index) {
         todosObjekt[index].checked = !todosObjekt[index].checked;
         drawListToDOM();
     }
+    //Löschen
     function deleteTodo(index) {
         todosObjekt.splice(index, 1);
         drawListToDOM();

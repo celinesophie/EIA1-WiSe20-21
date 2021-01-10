@@ -16,7 +16,7 @@ var todosObjekt: todosInter [] = [{
     checked: true
 }, {
     text: "Kochen",
-    checked: true
+    checked: false
 }];
 
 
@@ -28,24 +28,64 @@ var opentasks: HTMLElement;
 var closedtasks: HTMLElement;
 
 
+
+declare var Artyom: any;
+
 window.addEventListener("load", function(): void {
+    const artyom: any = new Artyom();
+        
+    //Artyom wird gestartet (wenn man Start drückt), hat timeout bis es hinzufügt, gestartet durch index wort
+    function startContinuousArtyom(): void {
+        artyom.fatality();
+    
+        setTimeout(
+            function(): void {
+                artyom.initialize({
+                    lang: "de-DE",
+                    continuous: true,
+                    listen: true,
+                    interimResults: true,
+                    debug: true
+                }).then(function(): void {
+                    console.log("Ready!");
+                });
+            }, 
+            250);
+    }
+    
+    startContinuousArtyom();
 
+    //wenn indexwort gesagt wird hört es zu -> wildcard ist das gesagte und wird Objekt hinzugefügt
+    artyom.addCommands({
+        indexes: ["erstelle Aufgabe *"],
+        smart: true,
+        action: function(i: any, wildcard: string): void {
+            todosObjekt.unshift({
+                text: wildcard,
+                checked: false
+            });
+            drawListToDOM();
+            console.log("NEUE Aufgabe wird erstellt: " + wildcard);
+            artyom.say(wildcard + "hinzugefügt");
+            
+        }
+    });
 
-    // import Artyom from "js/libs/artyom.window.min.js"
-    // let jarvis = new Artyom();
-    // jarvis.say("Hello !");
-    // Artyom.initialize({
-    //     lang: "en-US",
-    //     continuous: true,
-    //     debug: false, // Show what recognizes in the Console
-    //     listen: true, // Start listening after this
-    //     speed: 0.9, // Talk a little bit slow
-    //     //mode:"normal", // This parameter is not required as it will be normal by default
-    //     word_init_comma: "jarvis"
-    //   });
+    //Start des Zuhörens durch klick ausgelöst
+    document.getElementById("start").addEventListener("click", function(): void {
+        artyom.say("Willkommen");
+        startContinuousArtyom();
+    });
 
-
-
+    //Stopbutton unnötig
+    // document.getElementById("stop").addEventListener("click", function(): void {
+    //     artyom.fatality(); //damit artyom aufhört
+    //     // artyom.initialize(),
+    //     artyom.say("danke");
+    //     // UserDictation.stop();
+    //     // todosObjekt.unshift(wildcard);
+    // });
+    
 
     inputDOMElement = document.querySelector("#inputTodo");
     addButtonDOMElement = document.querySelector("#addButton");
@@ -53,17 +93,13 @@ window.addEventListener("load", function(): void {
     counterDOMElement = document.querySelector("#counter");
     opentasks = document.querySelector("#open");
     closedtasks = document.querySelector("#closed");
-
-    
     addButtonDOMElement.addEventListener("click", addTodo);
 
     drawListToDOM();
 });
 
 
-
-
-
+//Elemente werden DOM hinzugefügt
 function drawListToDOM(): void {
     todosDOMElement.innerHTML = "";
 
@@ -91,7 +127,7 @@ function drawListToDOM(): void {
     updateCounter();
 }
 
-
+//Zähler wird aktualisiert
 function updateCounter(): void {
 
     let nropen: number = todosObjekt.filter(todosObjekt => todosObjekt.checked === false).length;
@@ -99,11 +135,13 @@ function updateCounter(): void {
 
     counterDOMElement.innerHTML = todosObjekt.length + " in total";
     opentasks.innerHTML = nropen + " open";
-    console.log(nrdone);
     closedtasks.innerHTML = nrdone + " done";
 }
 
 
+
+
+//Todo wird erstellt
 function addTodo(): void {
     
     if (inputDOMElement.value != "") {
@@ -119,19 +157,17 @@ function addTodo(): void {
 
 }
 
-
+//Checkbox
 function toggleCheckState(index: number): void {
  todosObjekt[index].checked = !todosObjekt[index].checked;
  drawListToDOM();
 }
 
+//Löschen
 function deleteTodo(index: number): void {
     todosObjekt.splice(index, 1);
     drawListToDOM();
 }
-
-
-
 
 
 }
